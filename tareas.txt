@@ -1,0 +1,24 @@
+Index.php:
+-correos de contactanos
+-about us
+-boton de seleccion de paquete 
+-catalogo
+-detalle por paquete y reserva (inicio de sesion?)
+-eliminar los textos de html
+-filtro por destino, fecha y precio
+
+pages/login.php:
+- recuperacion de contraseñas
+- tracking.php
+
+
+admin:
+- inicio de secion y registo de admin 
+- recuperacion de contraseñas
+- registro de administradores
+- permisos y tipos de usuarios
+- panel de gestion de reserva 
+- gestion clientes 
+- cerrar sesion
+
+ 
