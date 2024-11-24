@@ -1,0 +1,92 @@
+.reservas-container {
+  display: flex; /* Coloca los elementos uno al lado del otro */
+  justify-content: flex-start; /* Alinea los cuadros a la izquierda */
+  gap: 10px; /* Espaciado entre el formulario y la tabla */
+  padding: 10px; /* Margen interno del contenedor */
+  margin-top: 20px; /* Separación con el menú */
+  margin-left: 220px;
+}
+
+.reservas-form-container,
+.reservas-table-container {
+  background-color: #f9f9f9; /* Fondo claro */
+  padding: 15px; /* Margen interno */
+  border: 1px solid #ddd; /* Borde gris */
+  border-radius: 5px; /* Bordes redondeados */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}
+
+.reservas-form-container {
+  width: 20%; /* Reduce el ancho del formulario */
+  min-width: 250px; /* Ancho mínimo para evitar que se colapse demasiado */
+}
+
+.reservas-table-container {
+  flex: 1; /* La tabla ocupa el espacio restante */
+  overflow-x: auto; /* Permite desplazamiento horizontal si la tabla es muy ancha */
+  max-width: 75%; /* Limita el ancho máximo de la tabla */
+}
+
+.reservas-table-container table {
+  width: 100%; /* Tabla ocupa todo el espacio del contenedor */
+  border-collapse: collapse; /* Bordes colapsados */
+  font-size: 13px; /* Fuente más pequeña */
+}
+
+.reservas-table-container th,
+.reservas-table-container td {
+  border: 1px solid #ddd; /* Bordes de la tabla */
+  padding: 8px; /* Espaciado interno */
+  text-align: left; /* Alineación del texto */
+}
+
+.reservas-table-container th {
+  background-color: #f2f2f2; /* Fondo gris claro */
+  font-weight: bold; /* Texto en negrita */
+}
+
+.reservas-button {
+  background-color: #4caf50; /* Color de fondo verde */
+  color: white; /* Texto blanco */
+  border: none; /* Sin borde */
+  padding: 8px 12px; /* Espaciado interno */
+  font-size: 12px; /* Fuente más pequeña */
+  border-radius: 3px; /* Bordes redondeados */
+  cursor: pointer; /* Cambia el cursor a mano */
+}
+
+.reservas-button:hover {
+  background-color: #45a049; /* Color más oscuro al pasar el ratón */
+}
+
+.reservas-button-cancelar {
+  background-color: #f44336; /* Color de fondo rojo */
+}
+
+.reservas-button-cancelar:hover {
+  background-color: #d32f2f; /* Color más oscuro al pasar el ratón */
+}
+
+.reservas-form-group {
+  margin-bottom: 8px; /* Espaciado entre los campos del formulario */
+}
+
+.reservas-form-group label {
+  display: block; /* Forzar etiquetas en líneas separadas */
+  font-size: 12px; /* Tamaño de fuente más pequeño */
+  margin-bottom: 5px; /* Espaciado debajo de las etiquetas */
+}
+
+.reservas-form-group input,
+.reservas-form-group select,
+.reservas-form-group textarea {
+  width: 100%; /* Ocupa todo el ancho del contenedor */
+  padding: 6px; /* Espaciado interno */
+  font-size: 12px; /* Tamaño de fuente más pequeño */
+  border: 1px solid #ccc; /* Borde gris claro */
+  border-radius: 3px; /* Bordes redondeados */
+}
+
+.reservas-form-group textarea {
+  resize: vertical; /* Permitir solo redimensionar verticalmente */
+}

@@ -36,6 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !isset($_POST['action'])) {
             empty($_POST["Destino"]) || 
             empty($_POST["Precio"]) || 
             empty($_POST["Duración"]) || 
+            empty($_POST["Detalle"]) || 
             empty($_POST["Descripcion"]) || 
             (empty($_FILES["Image"]["name"]) && empty($_POST['paquete_id']))) {
             
@@ -46,6 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !isset($_POST['action'])) {
             $destino = $_POST["Destino"];
             $precio = $_POST["Precio"];
             $duracion = $_POST["Duración"];
+            $detalle = $_POST["Detalle"];
             $descripcion = $_POST["Descripcion"];
             $paquete_id = $_POST["paquete_id"] ?? null;
             
@@ -65,6 +67,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !isset($_POST['action'])) {
                         $sql = "UPDATE paquetes SET 
                                 nombre = :nombre, 
                                 destino = :destino, 
+                                detalle = :detalle,
                                 descripcion = :descripcion, 
                                 precio = :precio, 
                                 duracion = :duracion" . 
@@ -76,6 +79,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !isset($_POST['action'])) {
                         $params = [
                             ':nombre' => $nombre,
                             ':destino' => $destino,
+                            ':detalle' => $detalle,
                             ':descripcion' => $descripcion,
                             ':precio' => $precio,
                             ':duracion' => $duracion,
@@ -97,6 +101,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !isset($_POST['action'])) {
                         $stmt = $PDO->prepare($sql);
                         $stmt->bindParam(':nombre', $nombre);
                         $stmt->bindParam(':destino', $destino);
+                        $stmt->bindParam(':detalle', $detalle);
                         $stmt->bindParam(':descripcion', $descripcion);
                         $stmt->bindParam(':precio', $precio);
                         $stmt->bindParam(':duracion', $duracion);
@@ -114,6 +119,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !isset($_POST['action'])) {
                 $sql = "UPDATE paquetes SET 
                         nombre = :nombre, 
                         destino = :destino, 
+                        detalle = :detalle, 
                         descripcion = :descripcion, 
                         precio = :precio, 
                         duracion = :duracion 
@@ -123,6 +129,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !isset($_POST['action'])) {
                 if ($stmt->execute([
                     ':nombre' => $nombre,
                     ':destino' => $destino,
+                    ':detalle' => $detalle,
                     ':descripcion' => $descripcion,
                     ':precio' => $precio,
                     ':duracion' => $duracion,
@@ -267,6 +274,10 @@ if (!empty($errorMesage)) {
                 <input type="text" id="Duración" name="Duración" maxlength="50" required>
             </div>
             <div class="formGroup">
+                <label for="Detalle">Detalle: </label> 
+                <textarea id="Detalle" name="Detalle" required></textarea>
+            </div>
+            <div class="formGroup">
                 <label for="Descripcion">Descripción: </label> 
                 <textarea id="Descripcion" name="Descripcion" required></textarea>
             </div>
@@ -290,6 +301,8 @@ if (!empty($errorMesage)) {
                     <th>Nombre</th>
                     <th>Destino</th>
                     <th>Precio</th>
+                    <th>Detalle</th>
+                    <th>Descripcion</th>
                     <th>Duración</th>
                     <th>Imagen</th>
                     <th>Acciones</th>
@@ -302,6 +315,8 @@ if (!empty($errorMesage)) {
                         <td><?php echo htmlspecialchars($paquete['nombre']); ?></td>
                         <td><?php echo htmlspecialchars($paquete['destino']); ?></td>
                         <td><?php echo htmlspecialchars($paquete['precio']); ?></td>
+                        <td><?php echo htmlspecialchars($paquete['detalle']); ?></td>
+                        <td><?php echo htmlspecialchars($paquete['descripcion']); ?></td>
                         <td><?php echo htmlspecialchars($paquete['duracion']); ?></td>
                         <td>
                             <img src="../uploads/<?php echo htmlspecialchars($paquete['imagen']); ?>" 
@@ -328,6 +343,7 @@ if (!empty($errorMesage)) {
         document.getElementById('Precio').value = paquete.precio;
         document.getElementById('Duración').value = paquete.duracion;
         document.getElementById('Descripcion').value = paquete.descripcion;
+        document.getElementById('Detalle').value = paquete.detalle;
         
         // Mostrar imagen actual
         document.getElementById('imagen_actual').innerHTML = 

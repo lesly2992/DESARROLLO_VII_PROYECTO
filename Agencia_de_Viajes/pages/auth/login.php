@@ -5,6 +5,7 @@ include("../includes/nav.php");
 require '../src/Database.php';
 
 
+
 // Inicializamos variables para errores
 $errorMessage="";
 

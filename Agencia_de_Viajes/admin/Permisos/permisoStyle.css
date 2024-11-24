@@ -1,0 +1,75 @@
+.permisos-container {
+  margin: 20px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-permiso {
+  width: 100%; /* Asegura que el form ocupe todo el ancho disponible */
+}
+
+.rol-selector {
+  margin-bottom: 20px;
+}
+
+.rol-selector select {
+  margin-left: 10px;
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.permisos-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.permisos-table th,
+.permisos-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.permisos-table th {
+  background-color: #f5f5f5;
+}
+
+.permisos-table td:first-child {
+  text-align: left;
+}
+
+.button-container {
+  margin-top: 20px;
+}
+
+.btn-guardar {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-cancelar {
+  background-color: #f0f0f0;
+  border: none;
+  padding: 10px 20px;
+  margin-left: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.error-message {
+  color: red;
+  margin-bottom: 10px;
+}
+
+.success-message {
+  color: green;
+  margin-bottom: 10px;
+}
